@@ -1,0 +1,33 @@
+<hr>
+    <h1>Cursos de Bailes</h1>
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th> </th>
+            <th>Genero</th>
+            <th>Titulo Original</th>
+            <th>Año</th>
+            <th>Descripcion</th>
+            <th>disponible</th>
+            <th>Stock</th>
+            <th> Comprar </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let lista of general" [ngClass]="{'estreno': lista.anio ==anio}">
+            <td><img [src]="lista.image" width="100" class="img-thumbnail" [alt]="lista.titulo"></td>
+            <td>{{lista.genero}}</td>
+            <td>{{lista.titulo}}</td>
+            <td>{{lista.anio}}</td>
+            <td>{{lista.plataforma}}</td>
+            <td><span *ngIf="lista.anio > anio">NO DISPONIBLE</span></td>
+            <td><span class="badge badge-warning" *ngIf="lista.stock == 0">SIN STOCK</span></td>
+            <td>
+                <button class="btn btn-primary btn-sm" (click)="downQuantity(lista)">-</button> {{lista.quantity}}
+                <button class="btn btn-primary btn-sm" (click)="upQuantity(lista)">+</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
