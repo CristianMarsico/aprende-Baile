@@ -1,3 +1,21 @@
 <hr>
-<h2> Carrito</h2>
+<h2> Elegidos </h2>
 <hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">N°</th>
+            <th scope="col">Ud eligío</th>
+            <th scope="col">Carga Horaria</th>
+            <th scope="col">Profesor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="table-info" *ngFor="let lista of favoriteList,index as id">
+            <th>{{ id+ 1}}</th>
+            <td> {{lista.genero}} </td>
+            <td> {{lista.carga}} </td>
+            <td> {{lista.profesor}} </td>
+        </tr>
+    </tbody>
+</table>

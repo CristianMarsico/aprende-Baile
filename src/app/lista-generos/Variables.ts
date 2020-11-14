@@ -3,11 +3,12 @@ export interface Baile{
     titulo: String;
     genero: String;
     anio: number;
-    plataforma: String;
+    descripcion: String;
     image: String;
     disponible: boolean;
     gusta: number;
-    stock: number;
-    quantity: number;
+    dia: number;
+    profesor: String;
+    carga: String;
     
 } 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Baile } from '../lista-generos/Variables';
+import { Router } from '@angular/router';
+import { ServicioCarrito } from '../servicios-carrito';
 
 @Component({
   selector: 'app-lista-generos',
@@ -11,7 +13,7 @@ export class ListaGenerosComponent implements OnInit {
 
   anio: number;
 
-  constructor() {
+  constructor(private cart: ServicioCarrito, private router: Router) {
 
     this.anio = new Date().getFullYear();
 
@@ -23,80 +25,78 @@ export class ListaGenerosComponent implements OnInit {
       titulo: 'dasdasdada',
       genero: 'Tango',
       anio: 2020,
-      plataforma: 'adadasda',
+      descripcion: 'jajajjajajajajjajajajjajaajjajajaajaja',
       image: 'assets/img/tango.jpg',
       disponible: true,
       gusta: 0.9,
-      stock: 1,
-      quantity: 0,
-
+      dia: 12,
+      profesor: 'Ricardo',
+      carga: '8 hs. semanales'
     },
 
     {
       titulo: 'adadadad',
       genero: 'Salsa',
-      anio: 2017,
-      plataforma: 'adadasd',
+      anio: 2020,
+      descripcion: 'adadasd',
       image: 'assets/img/salsa.jpg',
       disponible: true,
       gusta: 0.9,
-      stock: 1,
-      quantity: 0,
-
+      dia: 12,
+      profesor: 'Ricardo',
+      carga: '10 hs. semanales'
     },
 
     {
       titulo: 'sdadasdad',
       genero: 'Folklore',
       anio: 2022,
-      plataforma: 'asdadad',
+      descripcion: 'asdadad',
       image: 'assets/img/folklore.jpg',
       disponible: false,
       gusta: 0.9,
-      stock: 1,
-      quantity: 0,
-
+      dia: 12,
+      profesor: 'Ricardo',
+      carga: '6 hs semanales'
     },
 
     {
       titulo: 'sdasdasda',
       genero: 'Flamenco',
-      anio: 2022,
-      plataforma: 'asdasdadsa',
+      anio: 2020,
+      descripcion: 'asdasdadsa',
       image: 'assets/img/flamenco.jpg',
       disponible: false,
       gusta: 0.9,
-      stock: 1,
-      quantity: 0,
-
+      dia: 12,
+      profesor: 'Ricardo',
+      carga: '10 hs. semanales'
     },
 
     {
       titulo: 'sadadasd',
-      genero: 'Otro',
-      anio: 2022,
-      plataforma: 'asdasdad',
-      image: 'assets/img/gm-1.jpg',
+      genero: 'Clasico',
+      anio: 2020,
+      descripcion: 'asdasdad',
+      image: 'assets/img/clasico.jpg',
       disponible: false,
       gusta: 0.9,
-      stock: 8,
-      quantity: 0,
-
+      dia: 12,
+      profesor: 'Ricardo',
+      carga: '6 hs semanales'
     }
   ];
 
-  upQuantity(lista: Baile): void {
-    if (lista.quantity < lista.stock) {
-      lista.quantity++;
-    }
-  }
-  downQuantity(lista: Baile): void {
-    if (lista.quantity > 0) {
-      lista.quantity--;
-    }
+  ngOnInit(): void {
   }
 
-  ngOnInit(): void {
+
+  agregarFavorito(general): void {
+    this.cart.agregarfavorito(general);
+  }
+
+  verBaile(idx: number) {
+    this.router.navigate(['/general', idx]);
   }
 
 }

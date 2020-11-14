@@ -5,16 +5,16 @@ import { AppComponent } from './app.component';
 import { ListaGenerosComponent } from './lista-generos/lista-generos.component';
 import { FormsModule } from '@angular/forms';
 import { CarritoComponent } from './carrito/carrito.component';
-import { InformacionComponent } from './informacion/informacion.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { VerMasComponent } from './ver-mas/ver-mas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaGenerosComponent,
     CarritoComponent,
-    InformacionComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    VerMasComponent
   ],
   imports: [
     BrowserModule,
