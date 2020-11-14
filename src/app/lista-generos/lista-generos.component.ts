@@ -79,8 +79,8 @@ export class ListaGenerosComponent implements OnInit {
       image: 'assets/img/gm-1.jpg',
       disponible: false,
       gusta: 0.9,
-      stock: 1,
-      quantity: 5,
+      stock: 8,
+      quantity: 0,
 
     }
   ];

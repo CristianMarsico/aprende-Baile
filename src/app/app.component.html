@@ -8,26 +8,19 @@
       <h2>Bailes</h2>
       <ul class="navbar-nav">
           <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" [routerLink]="['/']">Home<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="#">Generos</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">Quienes somos</a>
+            <a class="nav-link" [routerLink]="['/sobre-nosotros']">Quienes somos</a>
           </li>
       </ul>
   </div>
 </nav>
   <div class="container ">
-      <div class="row ">
-          <div class="col-8 ">
-              <app-lista-generos></app-lista-generos>
-          </div>
-          <div class="col 4 ">
-              <app-carrito></app-carrito>
-          </div>
-      </div>
+    <router-outlet></router-outlet>
   </div>
   <footer class="footer bg-light text-center ">
       <div>
